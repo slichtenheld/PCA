@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww14100\viewh8980\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 HiPerGator Quick Start Guide\
+Dr. Ian Troxel\
+\
+This document summarizes the documents that describe how to use and run MPI programs on HiPerGator.\
+\
+\ul Assumptions\ulnone \
+I use command line tools so this guide describes how to do this through the like.  I happen to use the \'93Terminal\'94 app in Mac OS X.  You may use other terminal emulating tools if you would like as they all function basically the same. Note: references starting with \'93>\'94 denote command line items to type that do not include the typing of the \'93>\'94 itself.  Also, do not type the comments embedded in this document on those command line statements (they start with \'93#\'94 inside each > line).  Also note, where you see \'93<something>\'94 you are to replace the \'93something\'94 with whatever makes sense in your situation like username, program name, etc.\
+\
+\ul Logging into the system\ulnone \
+From the command line, log into the interactive nodes with:\
+>ssh <username>@hpg2.rc.ufl.edu\
+[enter your password]\
+\
+Note: you may use other tools as outlined in the RC_Class_Orientation.pdf\
+\
+\ul Obtaining access to the development nodes\ulnone \
+You must obtain access to the development nodes before continuing using the following:\
+>module load ufrc  #note: this module allows you to access the development nodes\
+>srundev -t 120  #note: this command requests access on the development nodes for 120 minutes\
+\
+You will notice the node description in your cursor will change to something like <user>@i21b-s2\
+Note that you must compile and execute jobs from the development nodes.\
+\
+\ul Developing code\ulnone \
+I use nano to write code natively on the system (from the command line type nano). There are other options as well like vi.  You may develop programs on your laptop but beware that text editors add invisible characters that will not be recognized by the compiler.\
+\
+\ul Compiling code\ulnone \
+You must first load the relevant modules that allow you access to a compiler for the processor architecture on which you will run and access to mpi libraries. Do that by executing the following:\
+>module load intel  #Note: this is your processor-specific compiler\
+>module load openmpi #Note: this loads an mpi library so the compiler knows how to handle the #include <mpi.h> command\
+\
+Compile your file with the following command:\
+>mpicc <source file name> -o <output file name>\
+\
+\ul Setting up a batch file script\ulnone \
+HiPerGator requires that you run jobs in batch mode, even if you are only running one job.  The SLURM script allows you to set up the requested resources and tells the scheduler which executable to run and other useful items.  Here is an example that I suggest you use from their documentation:\
+https://wiki.rc.ufl.edu/doc/Sample_SLURM_Scripts\
+(look at the MPI version)\
+\
+Here are some suggestions on some of the items in the list:\
+\
+#SBATCH --job-name=<replace with your job>\
+#SBATCH --mail-type=ALL\
+#SBATCH --mail-user=<your email>	#Note: I found this helpful as your job may not execute immediately\
+#SBATCH --ntasks=<number of MPI ranks you want>\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 #SBATCH --cpus-per-task=<number of cores per MPI rank \'97 usually will be 1>\
+#SBATCH --nodes=<number of nodes, which is a collection of 16 cores. Be sure you ask for enough nodes but not more than our limit>\
+#SBATCH --ntasks-per-node=<typically ntasks/nodes>\
+#SBATCH --output=<directory tree and file name>  #Note: I recommend sending the output to /ufrc/eel6763/<username>\
+\
+srun --mpi=pmi2 ./<your executable file>\
+\
+Note: this is not the full list.  You should define all parameters in their example file.\
+Note: the \'93date\'94 command before and after the execution portion of the file provides a rough estimation of execution timing but not might be as good as time calls in your code.\
+Note: the line \'93module load intel\'85\'94 is needed to make the compiled intel and openmpi libraries available to your code at runtime.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Note: you will only see stdout from your rank 0 process so you will have to do all debugging printf statements from there.  Be sure rank 0 is your orchestration node in future programs.\
+\
+\ul Executing code\ulnone \
+You must first add yourself to the class allocation in order to be given processing resources on which to execute your code.  Do this by adding the scheduling module and adding yourself to the class allocation:\
+>module load slurm\
+>module load class/eel6763\
+\
+To execute your program, which is done by calling your batch script that within specifies your executable, call the following:\
+sbatch <yourfile>.sh\
+\
+Note: You will see your job become allocated.  Nothing will print to the screen thereafter.  You will not be told when it starts, which will not necessarily occur immediately, nor when it completes.  That is why setting up an email message in the batch script is important.  Also, all stdout print statements will be written to the file you specified only.  That is why it is important to set that file up in the script as well.\
+\
+\ul Transferring files to/from the system\ulnone \
+To move files, I use the sftp command line interface in the Terminal app.  The steps to do this are:\
+>sftp <username>@sftp.rc.ufl.edu\
+[you will be asked to save an RSA key and input your password]\
+\
+You will enter your home directory on the interactive nodes.  I recommend you keep your programs there.  You will have to navigate to your execution node directory to upload/download input/output files through typical linux/unix commands such as cd (change directory) and ls (list files).  The command to download a file (from rc server to your laptop) is \'93get <filename>\'94 and the command to upload a file (from your laptop to the rc server) is \'93put <filename>\'94.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Note: you may use other tools as outlined in the RC_Class_Orientation.pdf\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+}
