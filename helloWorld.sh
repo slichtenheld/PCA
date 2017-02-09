@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --job-name=slichtenMPI_test  # Job name
+#SBATCH --job-name=helloWorld_test  # Job name
 #SBATCH --mail-type=ALL              # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=slichtenheld@ufl.edu  # Where to send mail	
 #SBATCH --ntasks=24                  # Number of MPI ranks
@@ -10,13 +10,13 @@
 #SBATCH --distribution=cyclic:cyclic # Distribute tasks cyclically on nodes and sockets
 #SBATCH --mem-per-cpu=1gb            # Memory per processor
 #SBATCH --time=00:05:00              # Time limit hrs:min:sec
-#SBATCH --output=/ufrc/eel6763/slichtenheld/std_mpi_test%j.out     # Standard output and error log
+#SBATCH --output=/ufrc/eel6763/slichtenheld/helloWorld%j.out     # Standard output and error log
 pwd; hostname; date
 
-echo "Running hello world program on $SLURM_JOB_NUM_NODES nodes with $SLURM_NTASKS tasks, each with $SLURM_CPUS_PER_TASK cores."
+echo "Running prime number generator program on $SLURM_JOB_NUM_NODES nodes with $SLURM_NTASKS tasks, each with $SLURM_CPUS_PER_TASK cores."
 
 module load intel/2016.0.109 openmpi/1.10.2
 
-srun --mpi=pmi2 /ufrc/data/training/SLURM/prime/prime_mpi
+srun --mpi=pmi2 /home/slichtenheld/helloWorld
 
 date
