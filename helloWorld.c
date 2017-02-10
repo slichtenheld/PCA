@@ -26,6 +26,7 @@ int main(int argc, char **argv) {
 			printf("%s\n",mesg);
 		}
 	}
+	
 	MPI_Finalize();
 	return 0;
 }
