@@ -11,8 +11,8 @@ int main(int argc, char **argv) {
  	MPI_Status status;
 
  	MPI_Init(NULL,NULL);
- 	MPI_Comm_rank(MPI_COMM_WORLD,&my_rank);
- 	MPI_Comm_size(MPI_COMM_WORLD,&total_ranks);
+ 	MPI_Comm_rank(MPI_COMM_WORLD,&my_rank); //gets my_rank for each processor
+ 	MPI_Comm_size(MPI_COMM_WORLD,&total_ranks); //gets total amount of ranks
 
 	if(my_rank!=0) {
 		sprintf(mesg,"Greetings from %d!",my_rank);
