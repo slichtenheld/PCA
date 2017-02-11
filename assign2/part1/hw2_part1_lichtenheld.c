@@ -73,12 +73,11 @@ double estimate_g(double lower_bound, double upper_bound, long long N) {
 			N_split = N % (total_ranks - 1);
 
 		}
-		printf("RANK %d - # calculations: %lld", my_rank, N_split);
 	}
 	else {
 		N_split = N / (total_ranks - 1);
-		//printf("RANK %d - # calculations: %lld", my_rank, N_split);
 	}
+	printf("RANK %d - # calculations: %lld\n", my_rank, N_split);
 
 	for (int i = 0; i < N_split; i++) {
 		result += function((double)randinrange(upper_bound, lower_bound) );
@@ -102,7 +101,7 @@ void collect_results(double *result) {
 			*result += temp;
 			printf("Received %f from RANK %d\n",*result, source );
 		}
-		printf("FINAL RESULT: %f",*result);
+		printf("FINAL RESULT: %f\n",*result);
 	}
 	else {
 		MPI_Send(result, 1, MPI_INT, dest, tag, MPI_COMM_WORLD);

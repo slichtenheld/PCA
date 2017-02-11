@@ -50,7 +50,7 @@ void initialize_data(){
 double estimate_g(double lower_bound, double upper_bound, long long N) {
 	double result;
 
-	for (int i = 0; i < N; i++) {
+	for (long long i = 0; i < N; i++) {
 		result += function((double)randinrange(upper_bound, lower_bound) );
 	}
 
