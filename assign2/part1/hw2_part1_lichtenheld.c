@@ -17,6 +17,9 @@ double randinrange(float,float);
 
 int main (int argc, char * argv[]) {
 	//printf("whats going on here...");
+	double start, end;
+	int my_rank;
+
 	if (argc != 4) {
         perror("ERROR: ./program <lower_bound> <upper_bound> <# of data points>");
         return(-1);
@@ -24,7 +27,12 @@ int main (int argc, char * argv[]) {
 
     /* MPI BEGIN */
     MPI_Init(&argc,&argv);
-    //printf("whats going on here Part 2...");
+	MPI_Comm_rank(MPI_COMM_WORLD,&my_rank);
+	
+
+	MPI_Barrier(MPI_COMM_WORLD); /* IMPORTANT */
+	start = MPI_Wtime();
+
 	float lower_bound	=	atof(argv[1]);
 	float upper_bound	=	atof(argv[2]);
 	long long	int	N	=	atof(argv[3]);
@@ -33,9 +41,19 @@ int main (int argc, char * argv[]) {
 
 	initialize_data();
 	result =  estimate_g(lower_bound,upper_bound,N);
+	//printf("estimate_g run: %f\n",result);
 	collect_results(&result);
 
+
+	MPI_Barrier(MPI_COMM_WORLD); /* IMPORTANT */
+	end = MPI_Wtime();
+
+
 	MPI_Finalize();
+	if (my_rank == 0) { /* use time on master node */
+    printf("Runtime = %f\n", end-start);
+}
+
 	return 0;
 
 }
@@ -45,7 +63,6 @@ double function(double var) {
 }
 
 double randinrange(float HI, float LO) {
-	//return ( ( rand()%((int)upper_bound - (int)lower_bound) ) + (int)lower_bound )
 	return LO + (double)(rand()) / ( (double)(RAND_MAX/(HI-LO)));
 }
 
@@ -71,18 +88,14 @@ double estimate_g(double lower_bound, double upper_bound, long long N) {
 		}
 		else {
 			N_split = N % (total_ranks - 1);
-
 		}
 	}
 	else {
 		N_split = N / (total_ranks - 1);
 	}
-	printf("RANK %d - # calculations: %lld\n", my_rank, N_split);
-
 	for (int i = 0; i < N_split; i++) {
 		result += function((double)randinrange(upper_bound, lower_bound) );
 	}
-
 	return ( ( (upper_bound - lower_bound) / N ) * result ); // still have to be divided by N
 }	
 
@@ -95,18 +108,15 @@ void collect_results(double *result) {
 	MPI_Status status;
 
 	if(my_rank==0) { /* gather all messages from everyone else */
-		int temp;
-		for(int source=1; source < total_ranks; source){
-			MPI_Recv(&temp, 1, MPI_INT, source, tag, MPI_COMM_WORLD, &status);
+		double temp;
+		for(int source=1; source < total_ranks; source++){
+			MPI_Recv(&temp, 1, MPI_DOUBLE, source, tag, MPI_COMM_WORLD, &status);
 			*result += temp;
-			printf("Received %f from RANK %d\n",*result, source );
+			//printf("Received %f from RANK %d\n",temp, source );
 		}
 		printf("FINAL RESULT: %f\n",*result);
 	}
 	else {
-		MPI_Send(result, 1, MPI_INT, dest, tag, MPI_COMM_WORLD);
+		MPI_Send(result, 1, MPI_DOUBLE, dest, tag, MPI_COMM_WORLD);
 	}
-
-
-
 }

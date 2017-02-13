@@ -27,7 +27,7 @@ int main (int argc, char *argv[]){
 	//double result = ( ( 8 * sqrt( 2 * M_PI ) ) / ( pow( M_E, pow(2 * val, 2) ) ) )
 
 
-	//srand(2);
+	//srand(2); 
 	//printf("Hello: %d, %d, %d\n", rand(), rand(), rand());
 
 
