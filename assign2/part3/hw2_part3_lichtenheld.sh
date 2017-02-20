@@ -1,22 +1,22 @@
 #!/bin/sh
-#SBATCH --job-name=SLICHTEN_HW2P1    # Job name
+#SBATCH --job-name=SLICHTEN_HW2P3    # Job name
 #SBATCH --mail-type=ALL              # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=salighthero@gmail.com  # Where to send mail	
-#SBATCH --ntasks=4                  # Number of MPI ranks
+#SBATCH --ntasks=32                 # Number of MPI ranks
 #SBATCH --cpus-per-task=1            # Number of cores per MPI rank, usually 1 
-#SBATCH --nodes=2                   # Number of nodes
+#SBATCH --nodes=16                 # Number of nodes
 #SBATCH --ntasks-per-node=2         # How many tasks on each node <ntasks/nodes>
 #SBATCH --ntasks-per-socket=1       # How many tasks on each CPU or socket <ntaskspernode/2>
 #SBATCH --distribution=cyclic:cyclic # Distribute tasks cyclically on nodes and sockets
 #SBATCH --mem-per-cpu=1gb            # Memory per processor
 #SBATCH --time=00:1:00              # Time limit hrs:min:sec
-#SBATCH --output=/ufrc/eel6763/slichtenheld/Part1%j.out     # Standard output and error log
+#SBATCH --output=Part3_%j.out     # Standard output and error log
 pwd; hostname; date
 
 echo "hw2_part1_lichtenheld on $SLURM_JOB_NUM_NODES nodes with $SLURM_NTASKS tasks, each with $SLURM_CPUS_PER_TASK cores."
 
 module load intel/2016.0.109 openmpi/1.10.2
 
-srun --mpi=pmi2 hw2_part1_lichtenheld -1.0 1.0 10000000
+srun --mpi=pmi2 hw2_part3_lichtenheld 3
 
 date
