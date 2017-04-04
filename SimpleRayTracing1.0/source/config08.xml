@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputset filename="output.xml">
+	<image>
+		<width>1280</width>
+		<height>800</height>
+		<objects>
+			<object id="1" type="sphere">
+				<shape>
+					<center>(1187.09, 699.43, 6377.85)</center>
+					<radius>39.5911</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.412231, 0.570312, 0.894287)</diffusion>
+					<specular>(0.642853, 0.072998, 0.758789)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.917114</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>96</power>
+				</materialproperty>
+			</object>
+			<object id="2" type="sphere">
+				<shape>
+					<center>(682.634, 667.223, 825.695)</center>
+					<radius>46.2415</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.417114, 0.339783, 0.478241)</diffusion>
+					<specular>(0.97226, 0.79245, 0.843323)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.764648</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>3</power>
+				</materialproperty>
+			</object>
+			<object id="3" type="sphere">
+				<shape>
+					<center>(754.392, 401.137, 6879.48)</center>
+					<radius>45.9998</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.99588, 0.865906, 0.818787)</diffusion>
+					<specular>(0.194061, 0.124878, 0.872803)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.363892</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>43</power>
+				</materialproperty>
+			</object>
+			<object id="4" type="sphere">
+				<shape>
+					<center>(1015.76, 466.429, 7011.41)</center>
+					<radius>38.4027</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.322235, 0.866272, 0.0088501)</diffusion>
+					<specular>(0.0234985, 0.367371, 0.063446)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.0783081</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>20</power>
+				</materialproperty>
+			</object>
+			<object id="5" type="sphere">
+				<shape>
+					<center>(913.203, 435.596, 8137.19)</center>
+					<radius>57.4777</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.275391, 0.873535, 0.971069)</diffusion>
+					<specular>(0.465332, 0.781952, 0.151245)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.687347</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>37</power>
+				</materialproperty>
+			</object>
+			<object id="6" type="sphere">
+				<shape>
+					<center>(1156.39, 447.409, 3277.72)</center>
+					<radius>59.2154</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.389587, 0.391174, 0.103424)</diffusion>
+					<specular>(0.639465, 0.668701, 0.14447)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.841583</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>50</power>
+				</materialproperty>
+			</object>
+			<object id="7" type="sphere">
+				<shape>
+					<center>(843.657, 558.239, 7852.1)</center>
+					<radius>42.5427</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.664795, 0.0278625, 0.30188)</diffusion>
+					<specular>(0.55426, 0.910156, 0.726746)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.723114</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>15</power>
+				</materialproperty>
+			</object>
+			<object id="8" type="sphere">
+				<shape>
+					<center>(1035.42, 480.572, 726.219)</center>
+					<radius>52.2235</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.769745, 0.0168152, 0.141022)</diffusion>
+					<specular>(0.732941, 0.267059, 0.466492)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.942017</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>79</power>
+				</materialproperty>
+			</object>
+			<object id="9" type="sphere">
+				<shape>
+					<center>(863.952, 642.404, 2624.45)</center>
+					<radius>57.1371</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.669189, 0.0257874, 0.494476)</diffusion>
+					<specular>(0.100067, 0.207672, 0.489502)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.200592</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>47</power>
+				</materialproperty>
+			</object>
+			<object id="10" type="sphere">
+				<shape>
+					<center>(1194.82, 520.357, 2777.61)</center>
+					<radius>42.3596</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.205994, 0.664612, 0.375763)</diffusion>
+					<specular>(0.033844, 0.551514, 0.770508)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.756409</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>78</power>
+				</materialproperty>
+			</object>
+			<object id="11" type="sphere">
+				<shape>
+					<center>(710.419, 715.33, 6161.01)</center>
+					<radius>38.4952</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.669678, 0.596069, 0.281158)</diffusion>
+					<specular>(0.990723, 0.708649, 0.700317)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.215424</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>35</power>
+				</materialproperty>
+			</object>
+			<object id="12" type="sphere">
+				<shape>
+					<center>(649.144, 664.295, 1640.31)</center>
+					<radius>36.6898</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.882355, 0.65683, 0.815857)</diffusion>
+					<specular>(0.608582, 0.796082, 0.0842896)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.686218</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>44</power>
+				</materialproperty>
+			</object>
+			<object id="13" type="sphere">
+				<shape>
+					<center>(1243.26, 671.333, 4126.6)</center>
+					<radius>52.7637</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.833679, 0.893921, 0.884491)</diffusion>
+					<specular>(0.694733, 0.412262, 0.229034)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.827271</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>87</power>
+				</materialproperty>
+			</object>
+			<object id="14" type="sphere">
+				<shape>
+					<center>(1217.42, 520.245, 864.515)</center>
+					<radius>48.9056</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.395905, 0.92392, 0.227417)</diffusion>
+					<specular>(0.00466919, 0.351044, 0.273102)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.817535</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>95</power>
+				</materialproperty>
+			</object>
+			<object id="15" type="sphere">
+				<shape>
+					<center>(1051.68, 400.079, 4650.67)</center>
+					<radius>36.3629</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.149994, 0.520386, 0.583832)</diffusion>
+					<specular>(0.218445, 0.036499, 0.417877)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.782471</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>42</power>
+				</materialproperty>
+			</object>
+			<object id="16" type="sphere">
+				<shape>
+					<center>(664.811, 464.751, 4354.97)</center>
+					<radius>37.5641</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.854645, 0.836273, 0.263367)</diffusion>
+					<specular>(0.0202332, 0.959381, 0.215515)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.706268</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>33</power>
+				</materialproperty>
+			</object>
+			<object id="17" type="sphere">
+				<shape>
+					<center>(748.036, 699.036, 5599.64)</center>
+					<radius>51.1111</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.588989, 0.167053, 0.406738)</diffusion>
+					<specular>(0.687897, 0.897156, 0.569489)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.361603</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>66</power>
+				</materialproperty>
+			</object>
+			<object id="18" type="sphere">
+				<shape>
+					<center>(840.85, 733.472, 1659.72)</center>
+					<radius>58.0838</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.100159, 0.661438, 0.717438)</diffusion>
+					<specular>(0.0985107, 0.198181, 0.604279)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.288361</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>69</power>
+				</materialproperty>
+			</object>
+			<object id="19" type="sphere">
+				<shape>
+					<center>(943.18, 541.956, 7816.31)</center>
+					<radius>33.0862</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.387726, 0.885437, 0.945282)</diffusion>
+					<specular>(0.555969, 0.911774, 0.0605164)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.352264</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>4</power>
+				</materialproperty>
+			</object>
+			<object id="20" type="sphere">
+				<shape>
+					<center>(973.251, 557.857, 9157.72)</center>
+					<radius>58.4811</radius>
+				</shape>
+				<materialproperty> 
+					<ambient>(0, 0, 0)</ambient>
+					<diffusion>(0.0551147, 0.646118, 0.903015)</diffusion>
+					<specular>(0.347412, 0.0450745, 0.371857)</specular>
+					<shininess>(0, 0, 0)</shininess>
+					<emission>(0, 0, 0)</emission>
+					<reflection>0.914978</reflection>
+					<refraction>0</refraction>
+					<density>0</density>
+					<power>8</power>
+				</materialproperty>
+			</object>
+		</objects>
+		<lights>
+			<light id="1">
+				<origin>(-4223.02, -9053.96, -4895.63)</origin>
+				<intensity>(0.108246, 0.0907898, 0.2453)</intensity>
+			</light>
+			<light id="2">
+				<origin>(3400.88, 5758.67, -5111.69)</origin>
+				<intensity>(0.531158, 0.577881, 0.234772)</intensity>
+			</light>
+			<light id="3">
+				<origin>(-1000.37, -8852.54, -6527.1)</origin>
+				<intensity>(0.213593, 0.445679, 0.541138)</intensity>
+			</light>
+			<light id="4">
+				<origin>(1425.17, -4924.32, -784.912)</origin>
+				<intensity>(0.304596, 0.549896, 0.786194)</intensity>
+			</light>
+			<light id="5">
+				<origin>(-4099.12, -8152.47, -94.6045)</origin>
+				<intensity>(0.250366, 0.164276, 0.394012)</intensity>
+			</light>
+		</lights>
+	</image>
+</inputset>
