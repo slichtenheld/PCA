@@ -10,7 +10,7 @@
 #include "defs.h"
 #include "svector.h"
 #include <cmath>
-#include <iostream.h>
+#include <iostream>
 #include <algorithm>
 //------------------------------------------------------------------------------
 using namespace std;

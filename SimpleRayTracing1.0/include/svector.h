@@ -7,7 +7,7 @@
 #ifndef SVECTOR_H
 #define SVECTOR_H
 //------------------------------------------------------------------------------
-#include <iostream.h>
+#include <iostream>
 #include <math.h>
 //------------------------------------------------------------------------------
 using namespace std;
