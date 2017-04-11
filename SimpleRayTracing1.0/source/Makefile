@@ -9,7 +9,7 @@
 
 CC=mpic++
 #CC=icpc
-#CC=icpc -openmp 
+#CC=g++ -fopenmp 
 #CC=g++
  
 #CFLAGS=-c -O2 -DSRAY_OPENMP -DSRAY_LB1 -Wno-deprecated -I../include/

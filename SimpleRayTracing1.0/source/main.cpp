@@ -120,7 +120,10 @@ int main(int argc, char* argv[])
 #ifdef SRAY_MPI
 	t1 = MPI_Wtime() - t1;
 
-	MPI_Reduce (&t1, &t1, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	if (rank == 0)
+		MPI_Reduce (MPI_IN_PLACE, &t1, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	else 
+		MPI_Reduce (&t1, &t1, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
 	if(!rank)
 		cout << "Rendering time required " << t1 << " seconds." << endl;
 #else
@@ -138,7 +141,11 @@ int main(int argc, char* argv[])
 	}
 	
 	t2 = MPI_Wtime() - t2;
-	MPI_Reduce (&t2, &t2, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	if (rank==0)
+		MPI_Reduce (MPI_IN_PLACE, &t2, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	else 
+		MPI_Reduce (&t1, &t1, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+	
 	if(!rank)
 	{
 		cout << "Data communication time required " << t2 << " seconds." << endl;
