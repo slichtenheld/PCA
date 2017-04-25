@@ -7,14 +7,16 @@
 # For now this file is empty except the 
 # definition of some macros 
 
-CC=mpic++
+#CC=mpic++
 #CC=icpc
 #CC=g++ -fopenmp 
 #CC=g++
+CC=mpic++ -fopenmp
  
 #CFLAGS=-c -O2 -DSRAY_OPENMP -DSRAY_LB1 -Wno-deprecated -I../include/
-CFLAGS=-c -O3 -DSRAY_MPI -DSRAY_LB1 -DLOAD_MEASUREMENT -Wno-deprecated -I../include/
+#CFLAGS=-c -O3 -DSRAY_MPI -DSRAY_LB1 -DLOAD_MEASUREMENT -Wno-deprecated -I../include/
 #CFLAGS=-c -O3 -Wno-deprecated -I../include/
+CFLAGS=-c -O3 -DSRAY_OPENMP -DSRAY_MPI -DSRAY_LB1 -DLOAD_MEASUREMENT -Wno-deprecated -I../include/ 
 
 # -DSRAY_LB1
 # -DSRAY_OPENMP -fopenmp
